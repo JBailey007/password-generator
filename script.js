@@ -5,7 +5,7 @@ function generatePassword()
 // Length verification
 {
   var length = window.prompt("Enter the desired password length (between 8 and 128 characters):");
-  while (isNaN(length) || length < 8 || length >128) {
+  while (isNaN(length) || length < 8 || length > 128) {
     length = window.prompt("Invalid input! Please enter a length between 8 and 128 characters:");
   }
 // Lowercase Option  
@@ -38,12 +38,29 @@ function generatePassword()
     window.alert("Special characters will NOT be included")
   }
 // For Loop for Random Password
+var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?";
+password1 = "";
+if (chooseLowerCase === true && chooseUpperCase === true && chooseNumeric === true && chooseSpecial === true) {
+  for ( var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * charset.length);
+    password1 += charset.charAt(randomIndex);
+  }
+  return password1; 
+} else if (chooseLowerCase !== true && chooseUpperCase === true && chooseNumeric === true && chooseSpecial === true){
+
+} else if (chooseLowerCase !== true && chooseUpperCase !== true && chooseNumeric === true && chooseSpecial === true){
+
+} else if (chooseLowerCase !== true && chooseUpperCase !== true && chooseNumeric !== true && chooseSpecial === true){
+
+}else {
+
+}
   for ( var i = 0; i < length; i++) {
     var randomIndex = Math.floor(Math.random() * charset.length);
     password += charset.charAt(randomIndex);
   }
 
-  return password;
+  return password; 
 }
 
 // Write password to the #password input
