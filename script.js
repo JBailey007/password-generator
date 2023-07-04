@@ -7,10 +7,10 @@ var charset = {
   upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 }
 
-function generatePassword() 
-// Length verification
-{
+function generatePassword() {
   var passwordInfo = "";
+  
+// Length verification
   var length = window.prompt("Enter the desired password length (between 8 and 128 characters):");
   while (isNaN(length) || length < 8 || length > 128) {
     length = window.prompt("Invalid input! Please enter a length between 8 and 128 characters:");
